@@ -1,0 +1,19 @@
+{
+  "name": "BananaTreeEditor",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nykevinwong/BananaTreeEditor",
+  "authors": [
+    "Kevin Wong"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kineticjs": "~5.1.0"
+  }
+}
