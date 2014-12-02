@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/nykevinwong/BananaTreeEditor",
   "dependencies": {
-    "express": "^4.10.4"
+    "ejs": "0.8.5",
+    "express": "^4.10.4",
+    "express-partials": "0.2.0"
   }
 }

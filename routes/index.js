@@ -5,7 +5,8 @@ module.exports.chat = chat;
 module.exports.editor = editor;
 
 function index(req, res){
-  res.send('Index');
+  res.render('index', {layout: 'layout', title: 'Index Title'});
+
 };
 function login(req, res){
   res.send('Login');
