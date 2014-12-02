@@ -9,13 +9,13 @@ function index(req, res){
 
 };
 function login(req, res){
-  res.send('Login');
+  res.render('login', {layout: 'layout', title: 'login Title'});
 };
 function loginProcess(req, res){
   res.redirect('/');
 };
 function chat(req, res){
-  res.send('Chat');
+  res.render('chat', {layout: 'layout', title: 'Chat Title'});
 };
 
 function editor(reg, res) {
