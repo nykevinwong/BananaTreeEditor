@@ -7,7 +7,7 @@ module.exports.editor = editor;
 function index(req, res){
   res.cookie('IndexCookie', 'This was set from Index middleware [web server side].');
  // res.clearCookie('IndexCookie');
-  res.render('index', {layout: 'layout', title: 'Index Title', cookie: JSON.stringify(req.cookies) });
+  res.render('index', {layout: 'layout', title: 'Index Title', cookie: JSON.stringify(req.cookies), session: JSON.stringify(req.session) });
 
 };
 function login(req, res){
