@@ -5,7 +5,9 @@ module.exports.chat = chat;
 module.exports.editor = editor;
 
 function index(req, res){
-  res.render('index', {layout: 'layout', title: 'Index Title'});
+  res.cookie('IndexCookie', 'This was set from Index middleware [web server side].');
+ // res.clearCookie('IndexCookie');
+  res.render('index', {layout: 'layout', title: 'Index Title', cookie: JSON.stringify(req.cookies) });
 
 };
 function login(req, res){
