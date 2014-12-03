@@ -18,6 +18,13 @@ app.use(cookieParser());
 // app.use(session());
 app.use(session({secret: 'secret'}));
 
+app.use(function(req, res, next){
+  if(req.session.pageCount)
+    req.session.pageCount++;
+  else
+    req.session.pageCount = 1;
+  next();
+});
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
@@ -31,6 +38,8 @@ app.get('/error', function(req, res, next){
 
 app.use(errorHandlers.error);
 app.use(errorHandlers.notFound);
+
+
 
 app.listen(3000);
 console.log("App server running on port 3000");
