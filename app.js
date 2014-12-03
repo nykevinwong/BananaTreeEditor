@@ -20,6 +20,9 @@ app.use(session({secret: 'secret'}));
 app.use(bodyParser.json()); // process application/json
 app.use(bodyParser.urlencoded({extended: false})); // process application/x-www-form-urlencoded
 app.use(csrf()); // add csrf token to the session
+
+app.use(util.authenticated);
+
 app.use(util.csrf); // add csrf token variable to req.local. this can be accessed in login.ejs to render a hidden token field inside a form tag for a form POST request.
 
 
@@ -32,10 +35,12 @@ app.use(function(req, res, next){
 });
 
 app.get('/', routes.index);
-app.get('/login', routes.login);
-app.post('/login', routes.loginProcess);
-app.get('/chat', routes.chat);
-app.get('/editor', routes.editor);
+app.get('/login', routes.login); // display login page with the login form
+app.get('/logout', routes.logOut);
+app.post('/login', routes.loginProcess); // process POST request for login form
+app.get('/chat',[util.requireAuthentication], routes.chat);
+app.get('/editor', [util.requireAuthentication], routes.editor);
+
 
 app.get('/error', function(req, res, next){
   next(new Error('A contrived error'));
