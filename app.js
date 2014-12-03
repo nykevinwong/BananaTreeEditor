@@ -6,6 +6,8 @@ var log = require('./middleware/log');
 var partials = require('express-partials');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var bodyParser = require('body-parser');
+
 
 app.set('view options', {defaultLayout: 'layout'});
 app.use(partials());
@@ -14,9 +16,9 @@ app.set('view engine', 'ejs');
 app.use(log.logger);
 app.use(express.static(__dirname + '/static'));
 app.use(cookieParser());
-
-// app.use(session());
 app.use(session({secret: 'secret'}));
+app.use(bodyParser.json()); // process application/json
+app.use(bodyParser.urlencoded({extended: false})); // process application/x-www-form-urlencoded
 
 app.use(function(req, res, next){
   if(req.session.pageCount)

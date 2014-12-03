@@ -14,7 +14,9 @@ function login(req, res){
   res.render('login', {layout: 'layout', title: 'login Title'});
 };
 function loginProcess(req, res){
-  res.redirect('/');
+  console.log(req.body);
+  res.send(req.body.username + ' ' + req.body.password);
+
 };
 function chat(req, res){
   res.render('chat', {layout: 'layout', title: 'Chat Title'});
