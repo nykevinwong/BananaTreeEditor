@@ -3,12 +3,12 @@ var app = express();
 var routes = require('./routes');
 var errorHandlers = require('./middleware/errorhandlers');
 var log = require('./middleware/log');
-var partials = require('express-partials');
+var partials = require('express-partials'); // provide master page feature
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var bodyParser = require('body-parser');
-
-
+var bodyParser = require('body-parser'); // process form post request
+var csrf = require('csurf'); // prevent Cross-Site Request Forgery (CSRF) when processing form post request
+var util = require('./middleware/utilities');
 app.set('view options', {defaultLayout: 'layout'});
 app.use(partials());
 
@@ -19,6 +19,9 @@ app.use(cookieParser());
 app.use(session({secret: 'secret'}));
 app.use(bodyParser.json()); // process application/json
 app.use(bodyParser.urlencoded({extended: false})); // process application/x-www-form-urlencoded
+app.use(csrf()); // add csrf token to the session
+app.use(util.csrf); // add csrf token variable to req.local. this can be accessed in login.ejs to render a hidden token field inside a form tag for a form POST request.
+
 
 app.use(function(req, res, next){
   if(req.session.pageCount)
