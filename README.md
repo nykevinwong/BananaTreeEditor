@@ -1,5 +1,7 @@
-BananaTreeEditor
+BananaTreeEditor 
 ================
+[![Build Status](https://travis-ci.org/nykevinwong/BananaTreeEditor.png)](https://travis-ci.org/nykevinwong/BananaTreeEditor)
+
 
 Requirement to develop this project:
 
