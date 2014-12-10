@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" href="css/spacelab.min.css">
+    <style>
+
+
+        #container {
+        width: 800px;
+        height: 600px;
+        float: left;
+        border: 1px solid #888;
+        border-radius: 5px;
+        -moz-box-shadow: inset 0 0 5px #888;
+        -webkit-box-shadow: inset 0 0 5px#888;
+        box-shadow: inner 0 0 5px #888;
+        }
+
+        #toolbar {
+        width: 200px;
+        height: 600px;
+        margin: 0 0 0 5px;
+        float: left;
+        border: 1px solid #888;
+        overflow: auto;
+        border-radius: 5px;
+        -moz-box-shadow: inset 0 0 5px #888;
+        -webkit-box-shadow: inset 0 0 5px#888;
+        box-shadow: inner 0 0 5px #888;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="container"></div>
+<div id="toolbar">
+    <div class="toolbar-inner">
+        <div class="btn-group-vertical">
+            <a href="#" id="addCustomShapeBtn" class="btn btn-primary btn-xs">Custom Shape</a>
+            <a href="#" id="addImageBtn" class="btn btn-primary btn-xs">Image</a>
+            <a href="#" id="addStarBtn" class="btn btn-primary btn-xs">Star</a>
+            <a href="#"  class="btn btn-primary btn-xs">Button</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="jslib/kineticjs/kinetic.min.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+var editor = new editor();
+

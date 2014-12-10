@@ -15,6 +15,8 @@ app.use(partials());
 app.set('view engine', 'ejs');
 app.use(log.logger);
 app.use(express.static(__dirname + '/static'));
+app.use('/jslib',  express.static(__dirname + '/bower_components'));
+
 app.use(cookieParser());
 app.use(session({secret: 'secret'}));
 app.use(bodyParser.json()); // process application/json
