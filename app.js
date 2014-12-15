@@ -48,10 +48,27 @@ app.get('/error', function(req, res, next){
   next(new Error('A contrived error'));
 });
 
+
+
+app.get('/xml2js', function xml(req, res)
+                   {
+                   var fs = require('fs'),
+                       xml2js = require('xml2js');
+
+                   var parser = new xml2js.Parser({mergeAttrs: true });
+
+                   fs.readFile(__dirname + '/static/xml/guy.xml', function(err, data) {
+                       parser.parseString(data, function (err, result) {
+                           res.send(result);
+                       });
+
+                   });
+
+                   });
+
+
 app.use(errorHandlers.error);
 app.use(errorHandlers.notFound);
-
-
 
 app.listen(3000);
 console.log("App server running on port 3000");

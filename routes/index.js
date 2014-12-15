@@ -40,3 +40,4 @@ function chat(req, res){
 function editor(reg, res) {
  res.send('Editor');
 };
+
