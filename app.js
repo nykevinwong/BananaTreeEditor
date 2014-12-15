@@ -55,11 +55,12 @@ app.get('/xml2js', function xml(req, res)
                    var fs = require('fs'),
                        xml2js = require('xml2js');
 
-                   var parser = new xml2js.Parser({mergeAttrs: true });
+                   var parser = new xml2js.Parser({mergeAttrs: true, explicitArray : false });
 
                    fs.readFile(__dirname + '/static/xml/guy.xml', function(err, data) {
                        parser.parseString(data, function (err, result) {
-                           res.send(result);
+                           var data = JSON.stringify(result);
+                           res.send(data);
                        });
 
                    });

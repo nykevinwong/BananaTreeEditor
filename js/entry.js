@@ -4,3 +4,8 @@ var e = editor.createEditorInstance();
 
 toolbar.createToolBar(e);
 
+$.getJSON( "/xml2js", function( data ) {
+
+    var a = eval(data);
+
+});
