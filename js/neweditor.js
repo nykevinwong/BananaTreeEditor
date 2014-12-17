@@ -28,7 +28,14 @@ Editor.prototype.getLayer = function(name)
    return this.layers[name];
 }
 
-Editor.prototype.addImage = function(layer, imageURL) {
+Editor.prototype.addImage = function(layer, kineticImg) {
+            var stage = this.stage;
+                layer.add(kineticImg);
+                layer.draw();
+
+}
+
+Editor.prototype.addImageURL = function(layer, imageURL) {
             var stage = this.stage;
             var img = new Image();
             img.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';

@@ -11,7 +11,7 @@ function createToolBar(e)
 createButton("addImageBtn",
 function()
 {
-    e.addImage(e.getLayer("mainLayer"), null);
+    e.addImageURL(e.getLayer("mainLayer"), null);
 });
 
 

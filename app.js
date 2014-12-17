@@ -48,6 +48,7 @@ app.get('/error', function(req, res, next){
   next(new Error('A contrived error'));
 });
 
+app.get('/users/:uid/assets/:file', routes.accessUserFiles );
 
 
 app.get('/xml2js', function xml(req, res)
@@ -59,8 +60,7 @@ app.get('/xml2js', function xml(req, res)
 
                    fs.readFile(__dirname + '/static/xml/guy.xml', function(err, data) {
                        parser.parseString(data, function (err, result) {
-                           var data = JSON.stringify(result);
-                           res.send(data);
+                           res.send(result);
                        });
 
                    });
