@@ -94,22 +94,32 @@ function getPartDestRect(part)
                 sRect.width = 64;
                 sRect.height = 64;
 
+
                 if (part.Index >= 192)
                 {
                     sRect.x = ((part.Index % 64) % 4) * 80;
                     sRect.y = Math.floor((part.Index % 64) / 4) * 64;
                     sRect.width = 80;
 
+
                 }
+
+                 if (part.Index >= 128)
+                 {
+                        part.SX = part.SX * 1.35;
+                        part.SY = part.SY * 1.35;
+                  }
     }
 
     return sRect;
 }
 
-function loadImages(CharDef, FrameName, getImageFunc)
+function loadImages(CharDef, FrameName, getFrameFunc)
 {
     var Frame = CharDef.FRAMES.FRAME[FrameName]
     var Parts = Frame.PARTS.PART;
+
+    var group =  new Kinetic.Group({x: 200, y:200 });
 
     for(var i=0;i < Parts.length; i++)
     {
@@ -117,19 +127,22 @@ function loadImages(CharDef, FrameName, getImageFunc)
         var imgTexture = getTexture(part, CharDef);
         var s = getPartDestRect(part);
 
-        var originX = s.width / 2;
-        var originY = s.height / 2;
-        var dx = Math.floor(part.X-originX);
-        var dy = Math.floor(part.Y-originY);
-        dx+=200;
-        dy+=200;
+        var angle = (part.Rotation/(2*Math.PI)) * 360;// in raidian alredy.  (rotation) / 360) * Math.PI;
+        var destWidth = s.width * part.SX;
+        var destHeight =s.height * part.SY;
+        var originX = destWidth / 2;
+        var originY = destHeight / 2;
+        var dx = Math.floor(part.X);
+        var dy = Math.floor(part.Y);
 
+
+        // need to fix rotation
 
         var image = new Kinetic.Image({
             x: dx,
             y: dy ,
-            width: s.width,
-            height: s.height,
+            width: destWidth,
+            height: destHeight,
             name: "part[" + part.Index + "]",
             image: imgTexture,
             crop: {
@@ -138,10 +151,21 @@ function loadImages(CharDef, FrameName, getImageFunc)
                     width: s.width,
                     height: s.height
                 },
-            draggable: true
+            draggable: true,
+            offset: {
+                x: originX,
+                y: originY
+            }
         });
 
-        getImageFunc(image);
+        image.rotate(angle);
+
+       if(part.Flip)
+       image.scale.x = -1;
+
+        group.add(image);
     }
+
+    getFrameFunc(group);
 
 }
