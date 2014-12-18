@@ -104,10 +104,12 @@ function getPartDestRect(part)
 
                 }
 
+                    sRect.SX=1;
+                    sRect.SY=1;
                  if (part.Index >= 128)
                  {
-                        part.SX = part.SX * 1.35;
-                        part.SY = part.SY * 1.35;
+                        sRect.SX = part.SX * 1.35;
+                        sRect.SY = part.SY * 1.35;
                   }
     }
 
@@ -128,15 +130,19 @@ function loadImages(CharDef, FrameName, getFrameFunc)
         var s = getPartDestRect(part);
 
         var angle = (part.Rotation/(2*Math.PI)) * 360;// in raidian alredy.  (rotation) / 360) * Math.PI;
-        var destWidth = s.width * part.SX;
-        var destHeight =s.height * part.SY;
+        var destWidth = s.width * s.SX;
+        var destHeight =s.height * s.SY;
         var originX = destWidth / 2;
         var originY = destHeight / 2;
         var dx = Math.floor(part.X);
         var dy = Math.floor(part.Y);
 
-
+        var tmpSX = 1;
         // need to fix rotation
+       if(part.Flip=="1")
+       {
+           tmpSX= -1;
+       }
 
         var image = new Kinetic.Image({
             x: dx,
@@ -155,13 +161,12 @@ function loadImages(CharDef, FrameName, getFrameFunc)
             offset: {
                 x: originX,
                 y: originY
-            }
+            },
+            scaleX: tmpSX
         });
 
         image.rotate(angle);
 
-       if(part.Flip)
-       image.scale.x = -1;
 
         group.add(image);
     }
