@@ -4,67 +4,100 @@ var asset = require("./asset.js");
 
 var e = editor.createEditorInstance();
 var mainLayer = e.getLayer("mainLayer");
-    var previousSelected = null;
-
+var previousSelected = null;
+var CharDef =null;
 
 toolbar.createToolBar(e);
 
-$.getJSON( "/xml2js", function( data ) {
 
-    var CharDef = data.CharDef;
-    var Animations = CharDef.Animations.Animation;
+asset.loadTextures( function()
+                       {
+                            var mySelect = $('#selectFrames');
+                            mySelect.unbind('change keypress');
+                            mySelect.bind('change keypress',function()
+                            {
+                               if($(this).data('last') !== $(this).val())
+                               {
+                               $(this).data('last', $(this).val());
+                               var frameName = $(this).val();
 
-    for(var i=0;i < Animations.length; i++)
-    {
-        var a = Animations[i];
-        Animations[a.Name] = a;
-    }
-
-    var Frames = CharDef.FRAMES.FRAME;
-    var mySelect = $('#selectFrames');
-
-    for(var i=0;i < Frames.length; i++)
-    {
-        var f = Frames[i];
-        Frames[f.Name] = f;
-
-
-        mySelect.append(
-            $('<option></option>').val(f.Name).html(f.Name)
-        );
-
-    }
-
-
-
-    asset.loadTextures( function()
-                           {
-                                mySelect.bind('change keypress',function()
-                                {
-                                   if($(this).data('last') !== $(this).val())
+                                   asset.loadImages(CharDef, frameName, function(frame)
                                    {
-                                   $(this).data('last', $(this).val());
-                                   var frameName = $(this).val();
+                                            if(previousSelected!=null)
+                                            {
+                                                previousSelected.remove();
+                                                previousSelected= null;
+                                            }
 
-                                       asset.loadImages(CharDef, frameName, function(frame)
-                                       {
-                                                if(previousSelected!=null)
-                                                {
-                                                    previousSelected.remove();
-                                                    previousSelected= null;
-                                                    }
+                                            mainLayer.add(frame);
+                                            mainLayer.draw();
+                                            previousSelected = frame;
+                                   });
 
-                                                mainLayer.add(frame);
-                                                mainLayer.draw();
-                                                previousSelected = frame;
-                                       });
+                               }
 
-                                   }
-
-                                });
+                            });
 
 
-                           });
+                       });
 
+$("#LoadCharacter").click(function()
+{
+    var name = $("#selectCharacters").val();
+
+    $.getJSON( "/xml2js/"+ name, function( data ) {
+
+        CharDef = data.CharDef;
+        var Animations = CharDef.Animations.Animation;
+
+        for(var i=0;i < Animations.length; i++)
+        {
+            var a = Animations[i];
+            Animations[a.Name] = a;
+        }
+
+        var Frames = CharDef.FRAMES.FRAME;
+        var mySelect = $('#selectFrames');
+        mySelect.empty();
+
+        for(var i=0;i < Frames.length; i++)
+        {
+            var f = Frames[i];
+            Frames[f.Name] = f;
+
+
+            mySelect.append(
+                $('<option></option>').val(f.Name).html(f.Name)
+            );
+
+        }
+
+        $("#selectFrames").val($("#selectFrames option:eq(2)").val());
+        $("#selectFrames").trigger("change");
+        $("#selectFrames").val($("#selectFrames option:first").val());
+        $("#selectFrames").trigger("change");
+
+
+    });
 
 });
+
+var c = $("#selectCharacters");
+var characterNames = ["carlos","guy","spiderman","wraith","zombie"];
+for(var i=0;i< characterNames.length;i++)
+{
+ var name = characterNames[i];
+ c.append(
+                $('<option></option>').val(name).html(name)
+            );
+}
+
+c.bind('change keypress',function()
+{
+   if($(this).data('last') !== $(this).val())
+   {
+     $(this).data('last', $(this).val());
+     $("#LoadCharacter").click();
+   }
+});
+

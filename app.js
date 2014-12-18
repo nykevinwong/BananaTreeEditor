@@ -51,14 +51,15 @@ app.get('/error', function(req, res, next){
 app.get('/users/:uid/assets/:file', routes.accessUserFiles );
 
 
-app.get('/xml2js', function xml(req, res)
+app.get('/xml2js/:name', function xml(req, res)
                    {
+                   var characterName = req.params.name;
                    var fs = require('fs'),
                        xml2js = require('xml2js');
 
                    var parser = new xml2js.Parser({mergeAttrs: true, explicitArray : false });
 
-                   fs.readFile(__dirname + '/static/xml/guy.xml', function(err, data) {
+                   fs.readFile(__dirname + '/static/xml/' + characterName + '.xml', function(err, data) {
                        parser.parseString(data, function (err, result) {
                            res.send(result);
                        });
