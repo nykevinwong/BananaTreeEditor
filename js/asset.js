@@ -121,7 +121,7 @@ function loadImages(CharDef, FrameName, getFrameFunc)
     var Frame = CharDef.FRAMES.FRAME[FrameName]
     var Parts = Frame.PARTS.PART;
 
-    var group =  new Kinetic.Group({x: 200, y:200 });
+    var group =  new Kinetic.Group({x: 200, y:400, draggable: true });
 
     for(var i=0;i < Parts.length; i++)
     {
@@ -157,7 +157,7 @@ function loadImages(CharDef, FrameName, getFrameFunc)
                     width: s.width,
                     height: s.height
                 },
-            draggable: true,
+          //  draggable: true,
             offset: {
                 x: originX,
                 y: originY
