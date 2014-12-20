@@ -5,10 +5,19 @@ var asset = require("./asset.js");
 var e = editor.createEditorInstance();
 var mainLayer = e.getLayer("mainLayer");
 var previousSelected = null;
+
 var CharDef =null;
+
 
 toolbar.createToolBar(e);
 
+function triggerChange(selector)
+{
+   $(selector).val($(selector+" option:eq(2)").val());
+   $(selector).trigger("change");
+   $(selector).val($(selector+" option:first").val());
+   $(selector).trigger("change");
+}
 
 asset.loadTextures( function()
                        {
@@ -19,9 +28,9 @@ asset.loadTextures( function()
                                if($(this).data('last') !== $(this).val())
                                {
                                $(this).data('last', $(this).val());
-                               var frameName = $(this).val();
+                                   var frameName = $(this).val();
 
-                                   asset.loadImages(CharDef, frameName, function(frame)
+                                   asset.loadImages(CharDef, frameName, function(group)
                                    {
                                             if(previousSelected!=null)
                                             {
@@ -29,10 +38,23 @@ asset.loadTextures( function()
                                                 previousSelected= null;
                                             }
 
-                                            mainLayer.add(frame);
+                                            mainLayer.add(group);
                                             mainLayer.draw();
-                                            previousSelected = frame;
+                                            previousSelected = group;
                                    });
+
+/*
+                                   var Scripts = frame.Scripts.Script;
+                                   var s ="";
+                                   for(var i=0;i<Scripts.length;i++)
+                                   {
+                                    s+=  "#[" + i  + "]" + Scripts[i] +"\n";
+                                   }
+
+                                   if(s.length>0)
+                                   {
+                                       alert("Scripts:\n" + s);
+                                   } */
 
                                }
 
@@ -65,6 +87,7 @@ $("#LoadCharacter").click(function()
 
         }
 
+
         animationSelect.bind('change keypress',function()
         {
            if($(this).data('last') !== $(this).val())
@@ -90,13 +113,15 @@ $("#LoadCharacter").click(function()
 
                        }
 
-                       $("#selectFrames").val($("#selectFrames option:eq(2)").val());
-                       $("#selectFrames").trigger("change");
-                       $("#selectFrames").val($("#selectFrames option:first").val());
-                       $("#selectFrames").trigger("change");
+                       mySelect.attr("size",KeyFrames.length );
+
+                       triggerChange("#selectFrames");
 
            }
         });
+
+                triggerChange("#selectAnimations");
+
 
 
 

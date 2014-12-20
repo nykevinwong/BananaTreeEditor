@@ -1,0 +1,1409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CharDef Path="zombie" HeadIndex="1" TorsoIndex="1" LegsIndex="1" WeaponIndex="0">
+    <Animations>
+        <Animation Name="IDLE">
+            <KeyFrames>
+                <KeyFrame FrameRef="0" Duration="7"/>
+                <KeyFrame FrameRef="1" Duration="7"/>
+                <KeyFrame FrameRef="2" Duration="7"/>
+                <KeyFrame FrameRef="3" Duration="7"/>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="RUN">
+            <KeyFrames>
+                <KeyFrame FrameRef="4" Duration="3"/>
+                <KeyFrame FrameRef="5" Duration="3"/>
+                <KeyFrame FrameRef="6" Duration="3"/>
+                <KeyFrame FrameRef="7" Duration="4"/>
+                <KeyFrame FrameRef="8" Duration="4"/>
+                <KeyFrame FrameRef="9" Duration="3"/>
+                <KeyFrame FrameRef="10" Duration="4"/>
+                <KeyFrame FrameRef="11" Duration="4"/>
+                <KeyFrame FrameRef="12" Duration="3"/>
+                <KeyFrame FrameRef="13" Duration="4"/>
+                <KeyFrame FrameRef="14" Duration="4"/>
+                <KeyFrame FrameRef="15" Duration="3"/>
+                <KeyFrame FrameRef="16" Duration="4"/>
+                <KeyFrame FrameRef="17" Duration="4">
+                    <Scripts>
+                        <Script>GOTO 2</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="FLY">
+            <KeyFrames>
+                <KeyFrame FrameRef="18" Duration="7"/>
+                <KeyFrame FrameRef="19" Duration="8"/>
+                <KeyFrame FrameRef="20" Duration="7"/>
+                <KeyFrame FrameRef="19" Duration="8"/>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="LAND">
+            <KeyFrames>
+                <KeyFrame FrameRef="21" Duration="3"/>
+                <KeyFrame FrameRef="22" Duration="5"/>
+                <KeyFrame FrameRef="23" Duration="5"/>
+                <KeyFrame FrameRef="24" Duration="4">
+                    <Scripts>
+                        <Script>SETANIM IDLE</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="HIT">
+            <KeyFrames>
+                <KeyFrame FrameRef="25" Duration="2"/>
+                <KeyFrame FrameRef="26" Duration="5"/>
+                <KeyFrame FrameRef="27" Duration="3"/>
+                <KeyFrame FrameRef="28" Duration="4"/>
+                <KeyFrame FrameRef="29" Duration="3">
+                    <Scripts>
+                        <Script>SETANIM IDLE</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="JHIT">
+            <KeyFrames>
+                <KeyFrame FrameRef="30" Duration="5"/>
+                <KeyFrame FrameRef="31" Duration="7"/>
+                <KeyFrame FrameRef="32" Duration="7"/>
+                <KeyFrame FrameRef="31" Duration="6"/>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="JMID">
+            <KeyFrames>
+                <KeyFrame FrameRef="33" Duration="3"/>
+                <KeyFrame FrameRef="34" Duration="3"/>
+                <KeyFrame FrameRef="35" Duration="3"/>
+                <KeyFrame FrameRef="36" Duration="3"/>
+                <KeyFrame FrameRef="37" Duration="3">
+                    <Scripts>
+                        <Script>SETANIM JFALL</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="JFALL">
+            <KeyFrames>
+                <KeyFrame FrameRef="38" Duration="6"/>
+                <KeyFrame FrameRef="39" Duration="5"/>
+                <KeyFrame FrameRef="40" Duration="6"/>
+                <KeyFrame FrameRef="39" Duration="4"/>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="HITLAND">
+            <KeyFrames>
+                <KeyFrame FrameRef="41" Duration="2"/>
+                <KeyFrame FrameRef="42" Duration="2"/>
+                <KeyFrame FrameRef="43" Duration="2"/>
+                <KeyFrame FrameRef="44" Duration="3"/>
+                <KeyFrame FrameRef="45" Duration="3"/>
+                <KeyFrame FrameRef="46" Duration="3"/>
+                <KeyFrame FrameRef="47" Duration="2"/>
+                <KeyFrame FrameRef="48" Duration="1">
+                    <Scripts>
+                        <Script>DEATHCHECK</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="43" Duration="7"/>
+                <KeyFrame FrameRef="49" Duration="2"/>
+                <KeyFrame FrameRef="50" Duration="2"/>
+                <KeyFrame FrameRef="51" Duration="3"/>
+                <KeyFrame FrameRef="52" Duration="3"/>
+                <KeyFrame FrameRef="53" Duration="3"/>
+                <KeyFrame FrameRef="21" Duration="3"/>
+                <KeyFrame FrameRef="22" Duration="3"/>
+                <KeyFrame FrameRef="23" Duration="4"/>
+                <KeyFrame FrameRef="24" Duration="4">
+                    <Scripts>
+                        <Script>SETANIM IDLE</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="ATTACK">
+            <KeyFrames>
+                <KeyFrame FrameRef="55" Duration="2"/>
+                <KeyFrame FrameRef="56" Duration="4"/>
+                <KeyFrame FrameRef="57" Duration="6">
+                    <Scripts>
+                        <Script>SLIDE 100</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="58" Duration="2"/>
+                <KeyFrame FrameRef="59" Duration="1"/>
+                <KeyFrame FrameRef="60" Duration="1"/>
+                <KeyFrame FrameRef="61" Duration="1"/>
+                <KeyFrame FrameRef="62" Duration="3"/>
+                <KeyFrame FrameRef="63" Duration="2"/>
+                <KeyFrame FrameRef="64" Duration="2"/>
+                <KeyFrame FrameRef="65" Duration="2"/>
+                <KeyFrame FrameRef="66" Duration="2">
+                    <Scripts>
+                        <Script>SETANIM IDLE</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="INIT">
+            <KeyFrames>
+                <KeyFrame FrameRef="0" Duration="1">
+                    <Scripts>
+                        <Script>SPEED 80</Script>
+                        <Script>HP 65</Script>
+                        <Script>AI ZOMBIE</Script>
+                    </Scripts>
+                </KeyFrame>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="DIEHIT">
+            <KeyFrames>
+                <KeyFrame FrameRef="67" Duration="1">
+                    <Scripts>
+                        <Script>ETHEREAL</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="68" Duration="1"/>
+                <KeyFrame FrameRef="69" Duration="1"/>
+                <KeyFrame FrameRef="70" Duration="2"/>
+                <KeyFrame FrameRef="71" Duration="2"/>
+                <KeyFrame FrameRef="72" Duration="2"/>
+                <KeyFrame FrameRef="73" Duration="2"/>
+                <KeyFrame FrameRef="74" Duration="3"/>
+                <KeyFrame FrameRef="75" Duration="2"/>
+                <KeyFrame FrameRef="76" Duration="3"/>
+                <KeyFrame FrameRef="77" Duration="3"/>
+                <KeyFrame FrameRef="78" Duration="3"/>
+                <KeyFrame FrameRef="79" Duration="3"/>
+                <KeyFrame FrameRef="80" Duration="2"/>
+                <KeyFrame FrameRef="81" Duration="2"/>
+                <KeyFrame FrameRef="82" Duration="2"/>
+                <KeyFrame FrameRef="83" Duration="3"/>
+                <KeyFrame FrameRef="84" Duration="4"/>
+                <KeyFrame FrameRef="85" Duration="3"/>
+                <KeyFrame FrameRef="86" Duration="2"/>
+                <KeyFrame FrameRef="87" Duration="2"/>
+                <KeyFrame FrameRef="88" Duration="2"/>
+                <KeyFrame FrameRef="89" Duration="2"/>
+                <KeyFrame FrameRef="90" Duration="4"/>
+                <KeyFrame FrameRef="91" Duration="4">
+                    <Scripts>
+                        <Script>KILLME</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="91" Duration="1"/>
+            </KeyFrames>
+        </Animation>
+        <Animation Name="DIELAND">
+            <KeyFrames>
+                <KeyFrame FrameRef="92" Duration="1">
+                    <Scripts>
+                        <Script>ETHEREAL</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="93" Duration="1"/>
+                <KeyFrame FrameRef="94" Duration="2"/>
+                <KeyFrame FrameRef="95" Duration="2"/>
+                <KeyFrame FrameRef="96" Duration="3"/>
+                <KeyFrame FrameRef="97" Duration="3"/>
+                <KeyFrame FrameRef="98" Duration="2"/>
+                <KeyFrame FrameRef="99" Duration="2"/>
+                <KeyFrame FrameRef="100" Duration="3">
+                    <Scripts>
+                        <Script>KILLME</Script>
+                    </Scripts>
+                </KeyFrame>
+                <KeyFrame FrameRef="100" Duration="1"/>
+            </KeyFrames>
+        </Animation>
+    </Animations>
+    <FRAMES>
+        <FRAME Name="IDLE1">
+            <PARTS>
+                <PART Index="74" X="37" Y="-84" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31.5" Y="-48.5" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="15.5" Y="-97" Rotation="0.2" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="31.5" Y="-148.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1.5" Y="-33" Rotation="-3.948808E-09" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-13" Y="-97" Rotation="1.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-15.5" Y="-69" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE2">
+            <PARTS>
+                <PART Index="74" X="35" Y="-84.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="28" Y="-48.5" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="16.5" Y="-97" Rotation="0.21" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="32.5" Y="-148.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1.5" Y="-33.5" Rotation="0.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-9" Y="-96" Rotation="1.19" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-12.5" Y="-68" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE3">
+            <PARTS>
+                <PART Index="74" X="32.5" Y="-84.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="24.5" Y="-48.5" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="17.5" Y="-97" Rotation="0.22" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="34" Y="-148.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1.5" Y="-33.5" Rotation="0.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-5.5" Y="-95.5" Rotation="1.08" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-7.5" Y="-68" Rotation="0.4200001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE4">
+            <PARTS>
+                <PART Index="74" X="33.5" Y="-84.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="26.5" Y="-48.5" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="17" Y="-97" Rotation="0.2" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="33.5" Y="-148.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1" Y="-33.5" Rotation="0.009999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-7" Y="-95" Rotation="1.08" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-7.5" Y="-68" Rotation="0.3900001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUNS1">
+            <PARTS>
+                <PART Index="74" X="37.5" Y="-90.5" Rotation="0.4500001" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="40.5" Y="-53" Rotation="0.86" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="20.5" Y="-97.5" Rotation="0.27" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="38.5" Y="-148.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="2.5" Y="-33.5" Rotation="0.04" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="6.5" Y="-96" Rotation="0.9600004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="8.5" Y="-70" Rotation="0.3900001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUNS2">
+            <PARTS>
+                <PART Index="74" X="42" Y="-92.5" Rotation="0.3600001" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="48" Y="-56.5" Rotation="0.7100001" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="24" Y="-97" Rotation="0.27" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="44" Y="-148.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="5.5" Y="-34" Rotation="0.06" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="15" Y="-96" Rotation="0.8400005" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="24.5" Y="-70" Rotation="0.3100001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN1">
+            <PARTS>
+                <PART Index="74" X="41" Y="-94" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="53.5" Y="-63" Rotation="0.2599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="24" Y="-98" Rotation="0.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="49" Y="-147.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="7.5" Y="-34" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="31" Y="-96.5" Rotation="0.5700004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="49.5" Y="-69.5" Rotation="0.1300001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN2">
+            <PARTS>
+                <PART Index="74" X="29" Y="-96.5" Rotation="0.34" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="36" Y="-79" Rotation="-0.2100001" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="25" Y="-98" Rotation="0.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="55.5" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="2.5" Y="-33.5" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="39" Y="-91.5" Rotation="0.4800004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="60" Y="-65.5" Rotation="0.1400001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN3">
+            <PARTS>
+                <PART Index="74" X="26" Y="-96.5" Rotation="0.42" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="43.5" Y="-79.5" Rotation="-0.3700002" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="26" Y="-98" Rotation="0.33" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="56" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="2.5" Y="-33.5" Rotation="0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="38" Y="-93" Rotation="0.4900004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="56.5" Y="-67" Rotation="0.1200001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN4">
+            <PARTS>
+                <PART Index="74" X="29" Y="-93.5" Rotation="0.42" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="48.5" Y="-79.5" Rotation="-0.42" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="23" Y="-98" Rotation="0.29" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="52" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="3.5" Y="-33.5" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="31.5" Y="-94.5" Rotation="0.4400004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="53" Y="-65" Rotation="0.06000005" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN5">
+            <PARTS>
+                <PART Index="74" X="47" Y="-87" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="61" Y="-72.5" Rotation="-0.08999998" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="23" Y="-98" Rotation="0.19" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="43.5" Y="-147.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="129" X="5.5" Y="-32.5" Rotation="0.08" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="17" Y="-95" Rotation="0.3500004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="45" Y="-62" Rotation="0.0500001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN6">
+            <PARTS>
+                <PART Index="74" X="51" Y="-91" Rotation="0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="60" Y="-57" Rotation="0.31" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="21" Y="-98" Rotation="0.16" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="39" Y="-148.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="129" X="5.5" Y="-32.5" Rotation="0.07" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="21" Y="-101.5" Rotation="0.2100004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="40.5" Y="-82" Rotation="-0.4399998" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN7">
+            <PARTS>
+                <PART Index="76" X="13.5" Y="-87" Rotation="1.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="40.5" Y="-52" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="24" Y="-98" Rotation="0.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="49" Y="-147.5" Rotation="0.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="7.5" Y="-34" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="33" Y="-95.5" Rotation="0.5900007" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="63.5" Y="-93" Rotation="-0.5099999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN8">
+            <PARTS>
+                <PART Index="76" X="11" Y="-91" Rotation="1.13" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="23" Y="-58.5" Rotation="0.8499998" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="25" Y="-98" Rotation="0.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="55.5" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="2.5" Y="-33.5" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="55" Y="-103.5" Rotation="-0.2399994" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="73.5" Y="-93.5" Rotation="-0.6399999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN9">
+            <PARTS>
+                <PART Index="75" X="17" Y="-93" Rotation="0.9299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="28" Y="-67.5" Rotation="0.06999987" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="26" Y="-98" Rotation="0.33" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="56" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="2.5" Y="-33.5" Rotation="0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="53" Y="-100" Rotation="0.08000036" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="68" Y="-85.5" Rotation="-0.55" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN10">
+            <PARTS>
+                <PART Index="76" X="38" Y="-80.5" Rotation="0.99" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="44" Y="-82.5" Rotation="0.04999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="23" Y="-98" Rotation="0.29" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="52" Y="-145.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="3.5" Y="-33.5" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="36.5" Y="-96.5" Rotation="0.2200003" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="53" Y="-80" Rotation="-0.09999997" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN11">
+            <PARTS>
+                <PART Index="74" X="38" Y="-100" Rotation="0.15" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="56.5" Y="-77.5" Rotation="-0.06999993" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="21" Y="-97.5" Rotation="0.19" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="43.5" Y="-147.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="129" X="5.5" Y="-32.5" Rotation="0.08" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="23" Y="-96" Rotation="0.3800004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="40" Y="-73.5" Rotation="-0.1799999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="RUN12">
+            <PARTS>
+                <PART Index="74" X="40.5" Y="-96" Rotation="0.06999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="61.5" Y="-72" Rotation="0.06999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="21" Y="-98" Rotation="0.16" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="39" Y="-148.5" Rotation="0.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="129" X="5.5" Y="-32.5" Rotation="0.07" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="20.5" Y="-97" Rotation="0.4300004" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="34" Y="-76.5" Rotation="-0.009999946" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="FLY1">
+            <PARTS>
+                <PART Index="74" X="37" Y="-84" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31.5" Y="-48.5" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="15.5" Y="-97" Rotation="0.2" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="31.5" Y="-148.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="4.5" Y="-33" Rotation="-0.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-13" Y="-97" Rotation="1.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-15.5" Y="-69" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="FLY2">
+            <PARTS>
+                <PART Index="74" X="35" Y="-84" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31.5" Y="-48.5" Rotation="0.9299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="15.5" Y="-97" Rotation="0.14" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="32.5" Y="-148.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="4.5" Y="-33" Rotation="-0.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-9.5" Y="-97" Rotation="1.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-15.5" Y="-69" Rotation="0.61" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="FLY3">
+            <PARTS>
+                <PART Index="74" X="33" Y="-84" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31.5" Y="-48.5" Rotation="0.87" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="15.5" Y="-97" Rotation="0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="33.5" Y="-148.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="4.5" Y="-33" Rotation="-0.009999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-7.5" Y="-97" Rotation="1.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-14.5" Y="-69.5" Rotation="0.6699999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="LAND1">
+            <PARTS>
+                <PART Index="74" X="44.5" Y="-48.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-15" Rotation="0.8499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="18.5" Y="-72" Rotation="0.46" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="51" Y="-104" Rotation="0.78" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="5.5" Y="-33" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="11" Y="-62.5" Rotation="1.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="17" Y="-26" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="LAND2">
+            <PARTS>
+                <PART Index="74" X="44.5" Y="-47" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-13.5" Rotation="0.8499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="19" Y="-68.5" Rotation="0.55" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="51" Y="-101" Rotation="0.8299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="5.5" Y="-32" Rotation="0.11" SX="1.03" SY="0.9400001" Flip="0"/>
+                <PART Index="75" X="11" Y="-60.5" Rotation="1.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="17" Y="-24.5" Rotation="0.4000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="LAND3">
+            <PARTS>
+                <PART Index="74" X="37" Y="-64.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="33.5" Y="-24.5" Rotation="0.8499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="18.5" Y="-76" Rotation="0.22" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="41" Y="-103.5" Rotation="0.78" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="5.5" Y="-34" Rotation="0.07" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="0" Y="-73" Rotation="1.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="4" Y="-39.5" Rotation="0.53" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="LAND4">
+            <PARTS>
+                <PART Index="74" X="34" Y="-82" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="33.5" Y="-40" Rotation="0.8499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="19.5" Y="-89.5" Rotation="0.22" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="39.5" Y="-129.5" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="3" Y="-29" Rotation="0.07" SX="1.06" SY="0.8500001" Flip="0"/>
+                <PART Index="75" X="-3.5" Y="-86.5" Rotation="1.09" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-5" Y="-55.5" Rotation="0.53" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HIT1">
+            <PARTS>
+                <PART Index="74" X="-34" Y="-85" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-40.5" Y="-61.5" Rotation="2.57" SX="1" SY="1" Flip="1"/>
+                <PART Index="65" X="-9.5" Y="-98" Rotation="-0.2" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="-21.5" Y="-153" Rotation="-0.7" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-11.5" Y="-31.5" Rotation="0.009999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-8.5" Y="-89.5" Rotation="0.3700002" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="17.5" Y="-61.5" Rotation="0.15" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HIT2">
+            <PARTS>
+                <PART Index="74" X="-41.5" Y="-85" Rotation="1.1" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-50" Y="-57.5" Rotation="2.67" SX="1" SY="1" Flip="1"/>
+                <PART Index="65" X="-15" Y="-98" Rotation="-0.31" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="-27.5" Y="-154" Rotation="-0.7999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-15" Y="-31.5" Rotation="-0.07000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-3" Y="-91.5" Rotation="0.2200002" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="27" Y="-64" Rotation="0.36" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HIT3">
+            <PARTS>
+                <PART Index="74" X="-16.5" Y="-92" Rotation="1.1" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-27.5" Y="-63" Rotation="2.69" SX="1" SY="1" Flip="1"/>
+                <PART Index="65" X="-4" Y="-98.5" Rotation="-0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="-10.5" Y="-154" Rotation="-0.6499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="6" Y="-36" Rotation="0.02999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-9" Y="-89" Rotation="0.4900002" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="12.5" Y="-54.5" Rotation="0.46" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HIT4">
+            <PARTS>
+                <PART Index="74" X="12" Y="-89" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="17.5" Y="-54" Rotation="2.330001" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="9" Y="-98.5" Rotation="-0.04999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="9" Y="-154" Rotation="-0.1399999" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1" Y="-34.5" Rotation="0.02999999" SX="0.95" SY="1" Flip="0"/>
+                <PART Index="75" X="-9" Y="-91.5" Rotation="0.8800001" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="-2" Y="-56" Rotation="0.8200001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HIT5">
+            <PARTS>
+                <PART Index="74" X="31" Y="-88.5" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="26" Y="-52.5" Rotation="0.9800005" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="12.5" Y="-98.5" Rotation="0.06000002" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="21.5" Y="-151.5" Rotation="1.175702E-07" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1.5" Y="-34.5" Rotation="0.03999999" SX="0.97" SY="1.01" Flip="0"/>
+                <PART Index="75" X="-11.5" Y="-91.5" Rotation="1.06" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-10" Y="-63.5" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JHIT1">
+            <PARTS>
+                <PART Index="74" X="13.5" Y="-98" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="14.5" Y="-49.5" Rotation="1.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="2.5" Y="-105.5" Rotation="-0.2400001" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-13" Y="-157.5" Rotation="-1.07" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="18" Y="-40.5" Rotation="-0.07000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-9.5" Y="-90.5" Rotation="0.5300002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-6.5" Y="-52" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JHIT2">
+            <PARTS>
+                <PART Index="74" X="11.5" Y="-98" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="12.5" Y="-49.5" Rotation="1.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="2.5" Y="-105.5" Rotation="-0.2700001" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-13" Y="-157.5" Rotation="-1.13" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="18" Y="-40.5" Rotation="-0.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-8.5" Y="-91" Rotation="0.5500002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-5" Y="-52" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JHIT3">
+            <PARTS>
+                <PART Index="74" X="9.5" Y="-98" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="9.5" Y="-49.5" Rotation="1.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="2.5" Y="-105.5" Rotation="-0.31" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-13" Y="-157.5" Rotation="-1.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="18" Y="-40.5" Rotation="-0.04" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-7" Y="-90.5" Rotation="0.5500002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-5" Y="-52" Rotation="0.54" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JMID1">
+            <PARTS>
+                <PART Index="74" X="26.5" Y="-106" Rotation="-0.16" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="35.5" Y="-75" Rotation="1.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="2.5" Y="-105.5" Rotation="-0.7299998" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-34.5" Y="-144" Rotation="-1.54" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="40.5" Y="-55" Rotation="-0.32" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-1.5" Y="-90" Rotation="0.1100002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="11.5" Y="-56" Rotation="0.54" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JMID2">
+            <PARTS>
+                <PART Index="74" X="3" Y="-106.5" Rotation="-0.7" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="42.5" Y="-86" Rotation="0.09999985" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-12" Y="-104.5" Rotation="-1.21" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-58.5" Y="-105.5" Rotation="-2.1" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="45.5" Y="-72.5" Rotation="-0.73" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-12" Y="-86" Rotation="-0.3599998" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="17" Y="-62" Rotation="0.4300001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JMID3">
+            <PARTS>
+                <PART Index="74" X="-1.5" Y="-118.5" Rotation="-1.55" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="35" Y="-125" Rotation="-0.4" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-12.5" Y="-97.5" Rotation="-1.679999" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-60.5" Y="-80" Rotation="-2.469999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="48.5" Y="-89.5" Rotation="-1.1" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-5.5" Y="-86" Rotation="-0.7099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="25.5" Y="-70" Rotation="0.06000008" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JMID4">
+            <PARTS>
+                <PART Index="74" X="-31.5" Y="-111" Rotation="-2.359999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-12" Y="-150.5" Rotation="-1.49" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-11.5" Y="-84.5" Rotation="-2.169999" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-47" Y="-50" Rotation="-3.07" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="44" Y="-118.5" Rotation="-1.83" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-4.5" Y="-83.5" Rotation="-1.63" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="28.5" Y="-97" Rotation="-0.7199998" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JMID5">
+            <PARTS>
+                <PART Index="74" X="-39.5" Y="-91" Rotation="-2.749999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-36.5" Y="-136" Rotation="-1.88" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-11.5" Y="-76" Rotation="-2.529999" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-31.5" Y="-24.5" Rotation="-3.419999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="27" Y="-133.5" Rotation="-2.28" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="0.5" Y="-76.5" Rotation="-1.98" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="26.5" Y="-104" Rotation="-1.21" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JFALL1">
+            <PARTS>
+                <PART Index="74" X="-39" Y="-70" Rotation="-2.989999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-47.5" Y="-112" Rotation="-2.44" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-8.5" Y="-70" Rotation="-2.849998" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-10.5" Y="-18" Rotation="-3.759999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="5.5" Y="-132" Rotation="-2.76" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-1.5" Y="-74.5" Rotation="-2.45" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="11" Y="-110" Rotation="-1.82" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JFALL2">
+            <PARTS>
+                <PART Index="74" X="-39" Y="-70" Rotation="-3.029999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-47.5" Y="-112" Rotation="-2.4" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-8.5" Y="-70" Rotation="-2.919998" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-10.5" Y="-18" Rotation="-3.699999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="5.5" Y="-132" Rotation="-2.76" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-1.5" Y="-74.5" Rotation="-2.51" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="11" Y="-110" Rotation="-1.76" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="JFALL3">
+            <PARTS>
+                <PART Index="74" X="-39" Y="-70" Rotation="-3.099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-47.5" Y="-112" Rotation="-2.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-8.5" Y="-70" Rotation="-2.929998" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-9" Y="-18" Rotation="-3.599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="4" Y="-132" Rotation="-2.79" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-1.5" Y="-74.5" Rotation="-2.579999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="9" Y="-110.5" Rotation="-1.67" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND1">
+            <PARTS>
+                <PART Index="75" X="-21" Y="-43.5" Rotation="-1.729998" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-12.5" Y="-82" Rotation="-2.35" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-18" Y="-25" Rotation="-1.099998" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="-57.5" Y="-47" Rotation="-0.7499997" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="36" Y="-29.5" Rotation="-2.299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-26.5" Y="-39" Rotation="-1.67" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="0.5" Y="-59.5" Rotation="-1.69" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND2">
+            <PARTS>
+                <PART Index="75" X="-10" Y="-30.5" Rotation="-0.9599984" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="19" Y="-53" Rotation="-1.61" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-20" Y="-19.5" Rotation="-1.509998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-64.5" Y="-24" Rotation="-1.26" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="43" Y="-17" Rotation="-1.909999" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-21" Y="-17" Rotation="-0.9500009" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="15.5" Y="-17" Rotation="-1.38" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND3">
+            <PARTS>
+                <PART Index="75" X="-14" Y="-16" Rotation="-0.6999984" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30" Y="-16.5" Rotation="-0.7000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-21" Y="-18" Rotation="-1.589998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-73.5" Y="-16" Rotation="-1.609999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="47" Y="-17" Rotation="-1.829999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-18.5" Y="-5" Rotation="-0.7200009" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="19" Y="2" Rotation="-1.13" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND4">
+            <PARTS>
+                <PART Index="75" X="-14" Y="-23.5" Rotation="-0.5499984" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30.5" Y="-22" Rotation="-0.5300003" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-21" Y="-33" Rotation="-1.809998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-73.5" Y="-16" Rotation="-1.909999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="47" Y="-37.5" Rotation="-1.519999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-15.5" Y="-14" Rotation="-0.5500009" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="19" Y="-2" Rotation="-1" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND5">
+            <PARTS>
+                <PART Index="75" X="-14" Y="-29.5" Rotation="-0.4399984" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30.5" Y="-23.5" Rotation="-0.4300003" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-21" Y="-40" Rotation="-1.759998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-73" Y="-28.5" Rotation="-1.849999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="47" Y="-42.5" Rotation="-1.629999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-16" Y="-21.5" Rotation="-0.4700009" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="19" Y="-5" Rotation="-0.9000006" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND6">
+            <PARTS>
+                <PART Index="75" X="-14" Y="-35" Rotation="-0.6999983" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30.5" Y="-29" Rotation="-0.4300003" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-21" Y="-38" Rotation="-1.689998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-74" Y="-35" Rotation="-1.639999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="47" Y="-42.5" Rotation="-1.699999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-13" Y="-34.5" Rotation="-0.7200007" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="23.5" Y="-22.5" Rotation="-0.7100008" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND7">
+            <PARTS>
+                <PART Index="75" X="-15" Y="-37.5" Rotation="-0.6999983" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30" Y="-36.5" Rotation="-0.4300003" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-20.5" Y="-29.5" Rotation="-1.469998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-74" Y="-26.5" Rotation="-1.789999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="46" Y="-31" Rotation="-1.859999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-13" Y="-35.5" Rotation="-0.8800006" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="23.5" Y="-28.5" Rotation="-0.6500008" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="HITLAND8">
+            <PARTS>
+                <PART Index="75" X="-15" Y="-29" Rotation="-0.6999983" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30.5" Y="-27.5" Rotation="-0.4300003" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-20.5" Y="-20.5" Rotation="-1.539998" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-73.5" Y="-20" Rotation="-1.789999" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="46" Y="-22" Rotation="-1.909999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-12.5" Y="-17" Rotation="-0.7000006" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="22.5" Y="-7.5" Rotation="-0.9100007" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="GETUP1">
+            <PARTS>
+                <PART Index="75" X="-6.5" Y="-28" Rotation="-0.4999985" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30" Y="-16.5" Rotation="-0.7000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-25.5" Y="-27" Rotation="-1.189998" SX="1" SY="1" Flip="0"/>
+                <PART Index="2" X="-53" Y="-56.5" Rotation="-0.6699992" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="39" Y="-17" Rotation="-1.829999" SX="0.99" SY="1.05" Flip="0"/>
+                <PART Index="74" X="-28.5" Y="-15" Rotation="-0.3800009" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="1.5" Y="0" Rotation="-1.13" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="GETUP2">
+            <PARTS>
+                <PART Index="75" X="-6.5" Y="-28" Rotation="-0.4999985" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="22" Y="-14.5" Rotation="-0.7000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-22.5" Y="-42" Rotation="-0.5799978" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="-26" Y="-81" Rotation="-0.0199992" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="30.5" Y="-17" Rotation="-1.829999" SX="0.98" SY="1.01" Flip="0"/>
+                <PART Index="74" X="-30.5" Y="-32" Rotation="0.07999912" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-11" Y="-3" Rotation="-1.13" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="GETUP3">
+            <PARTS>
+                <PART Index="75" X="7.5" Y="-49.5" Rotation="-0.0699985" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="26" Y="-20" Rotation="-0.1600001" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="-2.5" Y="-62.5" Rotation="-0.1199978" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="6.5" Y="-100.5" Rotation="0.3600008" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="0.5" Y="-30" Rotation="0.1000011" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-11.5" Y="-55.5" Rotation="0.3199991" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-2.5" Y="-21.5" Rotation="-0.3800003" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="GETUP4">
+            <PARTS>
+                <PART Index="75" X="15.5" Y="-57.5" Rotation="0.7300015" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="20.5" Y="-24.5" Rotation="0.8599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="3" Y="-68" Rotation="0.1200022" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="22" Y="-110.5" Rotation="0.6100009" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="-1.5" Y="-35" Rotation="0.07000113" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-0.5" Y="-63" Rotation="0.6099991" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="1" Y="-27.5" Rotation="0.1399997" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="GETUP5">
+            <PARTS>
+                <PART Index="75" X="30.5" Y="-56" Rotation="0.9100014" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="29" Y="-19" Rotation="0.9299998" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="11.5" Y="-69" Rotation="0.2300023" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="36" Y="-111" Rotation="0.7000009" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="1.5" Y="-34.5" Rotation="0.1100011" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="5" Y="-60.5" Rotation="0.859999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="11" Y="-27.5" Rotation="0.1399997" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="LAND1">
+            <PARTS>
+                <PART Index="74" X="44.5" Y="-48.5" Rotation="0.6" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-15" Rotation="0.8499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="18.5" Y="-72" Rotation="0.46" SX="1" SY="1" Flip="0"/>
+                <PART Index="5" X="51" Y="-104" Rotation="0.78" SX="1" SY="1" Flip="0"/>
+                <PART Index="138" X="5.5" Y="-33" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="11" Y="-62.5" Rotation="1.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="17" Y="-26" Rotation="0.5000001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK1">
+            <PARTS>
+                <PART Index="74" X="29.5" Y="-88.5" Rotation="0.4900001" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31" Y="-48.5" Rotation="0.85" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="1.5" Y="-100" Rotation="-0.05000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="15" Y="-149" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="-0.5" Y="-33" Rotation="-0.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="-37" Y="-109.5" Rotation="0.4700002" SX="1" SY="1" Flip="1"/>
+                <PART Index="80" X="-30" Y="-117.5" Rotation="-0.5799998" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK2">
+            <PARTS>
+                <PART Index="74" X="28" Y="-88.5" Rotation="0.42" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="31" Y="-48.5" Rotation="0.7500001" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="0" Y="-101.5" Rotation="-0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="15" Y="-149" Rotation="0.27" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="-0.5" Y="-33" Rotation="-0.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="-40" Y="-109.5" Rotation="0.3800003" SX="1" SY="1" Flip="1"/>
+                <PART Index="80" X="-51.5" Y="-135" Rotation="-0.36" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK3">
+            <PARTS>
+                <PART Index="74" X="28" Y="-88.5" Rotation="0.44" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="29" Y="-47.5" Rotation="0.83" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-1" Y="-101" Rotation="-0.14" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="15" Y="-149" Rotation="0.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="-0.5" Y="-33" Rotation="-0.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-47.5" Y="-124.5" Rotation="0.8500005" SX="1" SY="1" Flip="1"/>
+                <PART Index="80" X="-67.5" Y="-137" Rotation="-0.5199999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK4">
+            <PARTS>
+                <PART Index="74" X="28" Y="-88.5" Rotation="0.54" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="27.5" Y="-47" Rotation="0.9" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="6" Y="-101.5" Rotation="0.03999998" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="31.5" Y="-149.5" Rotation="0.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="1.5" Y="-33" Rotation="0.009999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="-22" Y="-105" Rotation="0.1600002" SX="1" SY="1" Flip="1"/>
+                <PART Index="80" X="-16" Y="-122.5" Rotation="-0.4999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="205" X="-21" Y="-129.5" Rotation="0.18" SX="1.52" SY="1.15" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK5">
+            <PARTS>
+                <PART Index="74" X="16" Y="-87.5" Rotation="1.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="0.5" Y="-46" Rotation="0.9" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="25" Y="-99.5" Rotation="0.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="50" Y="-146" Rotation="0.3" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="5" Y="-31" Rotation="0.07999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="36" Y="-95" Rotation="0.1600002" SX="1" SY="1" Flip="0"/>
+                <PART Index="79" X="54.5" Y="-100.5" Rotation="-0.9199998" SX="1" SY="1" Flip="0"/>
+                <PART Index="205" X="28.5" Y="-110.5" Rotation="0.45" SX="1.569999" SY="1.11" Flip="0"/>
+                <PART Index="1010" X="84" Y="-83.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK6">
+            <PARTS>
+                <PART Index="74" X="-2.5" Y="-91" Rotation="1.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-28" Y="-56.5" Rotation="1.34" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="30.5" Y="-97" Rotation="0.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="59" Y="-143" Rotation="0.4499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="6" Y="-31" Rotation="0.08999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="57.5" Y="-89.5" Rotation="0.1600002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="81.5" Y="-66.5" Rotation="-0.6699999" SX="1" SY="1" Flip="0"/>
+                <PART Index="205" X="77.5" Y="-80.5" Rotation="0.6799999" SX="0.8700001" SY="0.9300001" Flip="0"/>
+                <PART Index="205" X="93.5" Y="-64" Rotation="1.13" SX="0.5200003" SY="1.05" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK7">
+            <PARTS>
+                <PART Index="74" X="-1.5" Y="-97.5" Rotation="1.399999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-35.5" Y="-69.5" Rotation="1.689999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="33.5" Y="-98" Rotation="0.3099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1" X="64.5" Y="-140.5" Rotation="0.5099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="7" Y="-31" Rotation="0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="58.5" Y="-83" Rotation="0.5200002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="80" Y="-52.5" Rotation="0.2700001" SX="1" SY="1" Flip="0"/>
+                <PART Index="205" X="89" Y="-46" Rotation="1.399999" SX="0.6800003" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK8">
+            <PARTS>
+                <PART Index="74" X="2" Y="-97" Rotation="1.31" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-29.5" Y="-65.5" Rotation="1.47" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="32.5" Y="-98" Rotation="0.3299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="58" Y="-143" Rotation="0.5399998" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="7" Y="-31" Rotation="0.07999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="44.5" Y="-85.5" Rotation="0.6200001" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="59" Y="-51.5" Rotation="0.3500001" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK9">
+            <PARTS>
+                <PART Index="74" X="8" Y="-94.5" Rotation="1.24" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-22" Y="-64" Rotation="1.749999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="32.5" Y="-98" Rotation="0.28" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="56.5" Y="-143" Rotation="0.5399998" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="7" Y="-31" Rotation="0.06999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="32" Y="-89" Rotation="0.7" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="50" Y="-52.5" Rotation="-0.07999992" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK10">
+            <PARTS>
+                <PART Index="74" X="16" Y="-94" Rotation="1.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="-18.5" Y="-63.5" Rotation="1.959999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="30" Y="-98" Rotation="0.29" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="56.5" Y="-143" Rotation="0.5899998" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="5.5" Y="-31" Rotation="0.02999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="23.5" Y="-89" Rotation="0.6700001" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="43" Y="-54.5" Rotation="-0.1799999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK11">
+            <PARTS>
+                <PART Index="74" X="34" Y="-93.5" Rotation="1.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="2" Y="-63.5" Rotation="1.899999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="25" Y="-97" Rotation="0.29" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="49" Y="-143" Rotation="0.5599998" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="5.5" Y="-31" Rotation="0.01999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="9.5" Y="-92.5" Rotation="0.9" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="20.5" Y="-60" Rotation="-0.1799999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="ATTACK12">
+            <PARTS>
+                <PART Index="74" X="34" Y="-93.5" Rotation="0.9699999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="15" Y="-54" Rotation="1.589999" SX="1" SY="1" Flip="0"/>
+                <PART Index="64" X="19.5" Y="-97" Rotation="0.27" SX="1" SY="1" Flip="0"/>
+                <PART Index="3" X="40" Y="-146.5" Rotation="0.3499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="5" Y="-32" Rotation="0.04999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-1" Y="-95" Rotation="0.9699999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="4.5" Y="-61.5" Rotation="0.06000006" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP1">
+            <PARTS>
+                <PART Index="74" X="22.5" Y="-106.5" Rotation="-0.46" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="61" Y="-88" Rotation="-0.5000004" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-11" Y="-99.5" Rotation="-0.21" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-7.5" Y="-30.5" Rotation="-0.06" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-16.5" Y="-93" Rotation="0.5300004" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="5.5" Y="-65.5" Rotation="0.22" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-20.5" Y="-143.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="-12.5" Y="-146.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-27" Y="-142" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-20" Y="-150.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP2">
+            <PARTS>
+                <PART Index="74" X="18.5" Y="-115.5" Rotation="-0.6699998" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="62" Y="-103" Rotation="-0.6500004" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-13.5" Y="-99.5" Rotation="-0.3299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.08" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-11" Y="-92" Rotation="0.2500004" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="19.5" Y="-67.5" Rotation="0.07000002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-29" Y="-145" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="-32" Y="-136.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-39.5" Y="-146.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-37.5" Y="-152.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP3">
+            <PARTS>
+                <PART Index="74" X="3.5" Y="-119" Rotation="-0.7899997" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="52.5" Y="-111" Rotation="-0.7600003" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-17.5" Y="-99.5" Rotation="-0.4099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.11" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-10.5" Y="-94" Rotation="0.1100003" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="22.5" Y="-69.5" Rotation="0.02000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-37.5" Y="-146" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="-48.5" Y="-154" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-42" Y="-139.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-37" Y="-143.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP4">
+            <PARTS>
+                <PART Index="74" X="-2.5" Y="-119.5" Rotation="-0.7899997" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="45.5" Y="-113" Rotation="-0.7600003" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-18" Y="-99.5" Rotation="-0.4499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.09" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-7.5" Y="-95" Rotation="0.03000033" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="29.5" Y="-71" Rotation="0.07000002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-37.5" Y="-146" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-42" Y="-139.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-49.5" Y="-145.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP5">
+            <PARTS>
+                <PART Index="74" X="-3" Y="-108.5" Rotation="-0.5599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="43" Y="-88.5" Rotation="-0.4500003" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-17" Y="-98.5" Rotation="-0.4899999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.07000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-13.5" Y="-87.5" Rotation="0.2200004" SX="1" SY="1" Flip="0"/>
+                <PART Index="83" X="22" Y="-58.5" Rotation="0.13" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-42" Y="-139.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-49.5" Y="-145.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP6">
+            <PARTS>
+                <PART Index="74" X="0.5" Y="-98.5" Rotation="-0.32" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="36.5" Y="-68.5" Rotation="-0.1700003" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-15" Y="-96.5" Rotation="-0.4099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.05" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-18" Y="-84.5" Rotation="0.4000002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="5" Y="-58.5" Rotation="0.14" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-30.5" Y="-136.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-31.5" Y="-143.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP7">
+            <PARTS>
+                <PART Index="74" X="2" Y="-96.5" Rotation="0.13" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="24" Y="-56.5" Rotation="0.1799997" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-13.5" Y="-96.5" Rotation="-0.3599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.04" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-20.5" Y="-84" Rotation="0.4500003" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-13.5" Y="-50.5" Rotation="0.14" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-29.5" Y="-138" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-32" Y="-145" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP8">
+            <PARTS>
+                <PART Index="74" X="8" Y="-89.5" Rotation="0.25" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="18" Y="-46.5" Rotation="0.4099997" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-10" Y="-97" Rotation="-0.2399999" SX="1" SY="1" Flip="0"/>
+                <PART Index="130" X="-9" Y="-30.5" Rotation="-0.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-23.5" Y="-84" Rotation="0.5100002" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-20" Y="-49.5" Rotation="0.33" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-24" Y="-136.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-24" Y="-145" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP9">
+            <PARTS>
+                <PART Index="74" X="23.5" Y="-86.5" Rotation="0.61" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="18" Y="-46.5" Rotation="0.5599997" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="2.5" Y="-98" Rotation="-0.1599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="4" Y="-34" Rotation="0.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-17.5" Y="-86" Rotation="0.6500001" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-20" Y="-49" Rotation="0.46" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-8" Y="-137" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-6" Y="-141.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP10">
+            <PARTS>
+                <PART Index="74" X="28" Y="-85.5" Rotation="0.7199999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="16.5" Y="-46.5" Rotation="0.6499996" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="8" Y="-98" Rotation="-0.01999989" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="4" Y="-34" Rotation="0.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-13.5" Y="-87" Rotation="0.77" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-20" Y="-49" Rotation="0.5599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="3.5" Y="-136.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="4.5" Y="-141.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP11">
+            <PARTS>
+                <PART Index="74" X="32.5" Y="-84.5" Rotation="0.7899998" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="17.5" Y="-46.5" Rotation="0.7099996" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="12.5" Y="-98" Rotation="0.1900001" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="4" Y="-34" Rotation="0.009999996" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-5" Y="-89" Rotation="0.8899999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-17" Y="-49.5" Rotation="0.6499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="14" Y="-136" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="21.5" Y="-136" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="27.5" Y="-136.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP12">
+            <PARTS>
+                <PART Index="74" X="38" Y="-82" Rotation="0.6599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="24.5" Y="-42" Rotation="1.399999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="13.5" Y="-98.5" Rotation="0.2100001" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="4" Y="-34" Rotation="0.02" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="2.5" Y="-88.5" Rotation="0.6899999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-5.5" Y="-51" Rotation="0.7199998" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="21" Y="-138" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="27" Y="-138" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="33" Y="-136.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP13">
+            <PARTS>
+                <PART Index="74" X="39" Y="-82" Rotation="0.6299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="30" Y="-42" Rotation="1.279999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="13" Y="-98.5" Rotation="0.1800001" SX="1" SY="1" Flip="0"/>
+                <PART Index="128" X="4" Y="-34" Rotation="-3.948808E-09" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="5" Y="-88.5" Rotation="0.62" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="0.5" Y="-51.5" Rotation="0.7199998" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="20" Y="-146" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="22" Y="-138" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP14">
+            <PARTS>
+                <PART Index="75" X="30.5" Y="-74.5" Rotation="0.4999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="41.5" Y="-43" Rotation="0.2299986" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="13" Y="-82.5" Rotation="0.03000011" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="3.5" Y="-39.5" Rotation="-0.09" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-1" Y="-76.5" Rotation="0.67" SX="1" SY="1" Flip="0"/>
+                <PART Index="79" X="8" Y="-49" Rotation="-0.1200002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="16.5" Y="-124.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="21" Y="-134" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP15">
+            <PARTS>
+                <PART Index="75" X="36" Y="-64.5" Rotation="0.4999999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="54.5" Y="-33.5" Rotation="0.00999858" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="14.5" Y="-71" Rotation="-0.1299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="9" Y="-35" Rotation="0.01000001" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="-0.5" Y="-60.5" Rotation="0.7499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="79" X="9" Y="-42" Rotation="-0.1200002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="10.5" Y="-113.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="14" Y="-115.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP16">
+            <PARTS>
+                <PART Index="75" X="42.5" Y="-48" Rotation="0.6399999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="59.5" Y="-15.5" Rotation="0.1799986" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="23" Y="-64.5" Rotation="0.02000011" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="12.5" Y="-30" Rotation="0.09000001" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="75" X="10" Y="-56.5" Rotation="0.7499999" SX="1" SY="1" Flip="0"/>
+                <PART Index="79" X="29" Y="-22" Rotation="-0.3000002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="30" Y="-102.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="23" Y="-99.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP17">
+            <PARTS>
+                <PART Index="75" X="42.5" Y="-48" Rotation="0.8199999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="46" Y="-12.5" Rotation="0.4599986" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="23" Y="-65" Rotation="0.06000012" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="12.5" Y="-30" Rotation="0.07000002" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="74" X="11" Y="-52" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="6.5" Y="-21" Rotation="0.3399998" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="30" Y="-102.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="23" Y="-99.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP18">
+            <PARTS>
+                <PART Index="75" X="34" Y="-49.5" Rotation="0.8699998" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="34.5" Y="-13.5" Rotation="0.7199986" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="20" Y="-64.5" Rotation="-0.07999989" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="12.5" Y="-30" Rotation="0.06000001" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="74" X="2.5" Y="-52" Rotation="0.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-0.5" Y="-20" Rotation="0.3399998" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="17.5" Y="-105.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="19" Y="-99" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP19">
+            <PARTS>
+                <PART Index="75" X="42.5" Y="-48.5" Rotation="1.01" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="34.5" Y="-13.5" Rotation="0.7999986" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="27.5" Y="-64.5" Rotation="0.1300001" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="12.5" Y="-30" Rotation="0.09000002" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="74" X="7.5" Y="-53" Rotation="0.8599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="0.5" Y="-20" Rotation="0.5199997" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="40.5" Y="-101.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="44" Y="-112.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP20">
+            <PARTS>
+                <PART Index="75" X="52" Y="-42.5" Rotation="1.349999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-11.5" Rotation="1.049999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="41.5" Y="-60.5" Rotation="0.4100001" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="14" Y="-30" Rotation="0.14" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="74" X="22" Y="-53" Rotation="1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="5.5" Y="-20" Rotation="0.6899996" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="56.5" Y="-95" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="55.5" Y="-90.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP21">
+            <PARTS>
+                <PART Index="75" X="52" Y="-42.5" Rotation="1.349999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-11.5" Rotation="1.049999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="47.5" Y="-58" Rotation="0.65" SX="1" SY="1" Flip="0"/>
+                <PART Index="133" X="16" Y="-29" Rotation="0.21" SX="1.06" SY="0.9200001" Flip="0"/>
+                <PART Index="74" X="31.5" Y="-51.5" Rotation="1.17" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="13.5" Y="-20.5" Rotation="0.8299996" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="69" Y="-85.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="65" Y="-93" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP22">
+            <PARTS>
+                <PART Index="75" X="64" Y="-18" Rotation="1.989999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="38" Y="-11.5" Rotation="1.419998" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="66" Y="-35.5" Rotation="0.97" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="10.5" Y="-5" Rotation="1.44" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="54.5" Y="-35.5" Rotation="1.37" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="27.5" Y="-14" Rotation="1.449999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="91.5" Y="-58" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="91" Y="-65.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="79.5" Y="-73.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP23">
+            <PARTS>
+                <PART Index="75" X="63.5" Y="-15.5" Rotation="2.299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="32" Y="-10.5" Rotation="2.129998" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="74.5" Y="-22" Rotation="1.26" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="10.5" Y="-5" Rotation="1.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="68.5" Y="-24.5" Rotation="1.849999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="34" Y="-11" Rotation="1.629999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="98" Y="-39.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="89" Y="-56.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="97.5" Y="-47.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1013" X="105.5" Y="-35.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP24">
+            <PARTS>
+                <PART Index="75" X="63.5" Y="-15.5" Rotation="2.299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="32" Y="-10.5" Rotation="2.129998" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="74.5" Y="-20" Rotation="1.5" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="8.5" Y="-4.5" Rotation="1.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="68.5" Y="-19" Rotation="1.849999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="33" Y="-10" Rotation="1.729999" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="100" Y="-32.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="100" Y="-27.5" Rotation="0.18" SX="1" SY="1" Flip="0"/>
+                <PART Index="1013" X="104.5" Y="-28" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="DECAP25">
+            <PARTS>
+                <PART Index="75" X="63.5" Y="-15.5" Rotation="2.299999" SX="1" SY="1" Flip="0"/>
+                <PART Index="84" X="32" Y="-10.5" Rotation="2.129998" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="74" Y="-19.5" Rotation="1.5" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="8" Y="-4.5" Rotation="1.66" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="68.5" Y="-17.5" Rotation="1.909999" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="33" Y="-10" Rotation="1.789999" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE1">
+            <PARTS>
+                <PART Index="76" X="-17.5" Y="-13" Rotation="-0.8299986" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-17" Y="-46" Rotation="-0.1799996" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-33.5" Y="-25.5" Rotation="-0.9899985" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-50.5" Y="-67" Rotation="0.4800003" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="43.5" Y="-37" Rotation="-2.599999" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-51" Y="-41.5" Rotation="-2.09" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30.5" Y="-75.5" Rotation="-1.16" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-4.5" Y="-37.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="10.5" Y="-28.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1013" X="11.5" Y="-14" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-24" Y="-29.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1017" X="-24" Y="-10.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-70" Y="-52.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-5" Y="-66" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE2">
+            <PARTS>
+                <PART Index="76" X="-8.5" Y="-12" Rotation="-1.159998" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-18.5" Y="-39.5" Rotation="-0.1799996" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-47" Y="-38" Rotation="-1.179998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-55" Y="-93.5" Rotation="0.8700002" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="58.5" Y="-60" Rotation="-2.909998" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-57" Y="-56" Rotation="-1.74" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30" Y="-75.5" Rotation="-1.23" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="-1" Y="-63" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="30" Y="-43" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1013" X="-19" Y="-55" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-0.5" Y="-30.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1017" X="-28" Y="-22.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-85.5" Y="-83" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="26.5" Y="-24.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE3">
+            <PARTS>
+                <PART Index="76" X="-3.5" Y="-10" Rotation="-1.129998" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-14.5" Y="-39.5" Rotation="-0.1699996" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-53.5" Y="-43.5" Rotation="-1.359998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-58.5" Y="-110" Rotation="1.4" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="62" Y="-84" Rotation="-3.289998" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-58.5" Y="-55" Rotation="-1.61" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30" Y="-73.5" Rotation="-1.19" SX="1" SY="1" Flip="0"/>
+                <PART Index="1011" X="55" Y="-56.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1012" X="-33.5" Y="-38" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1013" X="-65" Y="-30.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1018" X="-38.5" Y="-68" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1017" X="46" Y="-45.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="13" Y="-43.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE4">
+            <PARTS>
+                <PART Index="76" X="-3.5" Y="-10" Rotation="-0.8599987" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="-4.5" Y="-38" Rotation="-0.1099996" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-59.5" Y="-41.5" Rotation="-1.419998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-65.5" Y="-107.5" Rotation="1.72" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="63.5" Y="-84.5" Rotation="-3.579998" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-61" Y="-48" Rotation="-1.44" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30" Y="-60.5" Rotation="-1.03" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="70.5" Y="-55.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-51" Y="-21.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-102.5" Y="-54" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-101" Y="-113" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE5">
+            <PARTS>
+                <PART Index="76" X="2" Y="-8.5" Rotation="-0.7399988" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="6" Y="-36" Rotation="0.01000038" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-63" Y="-35" Rotation="-1.549998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-69" Y="-102" Rotation="1.959999" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="66" Y="-76" Rotation="-3.809998" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-62" Y="-38" Rotation="-1.34" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30.5" Y="-49.5" Rotation="-0.9200002" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="66" Y="-48.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="-100.5" Y="-41" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="-10" Y="-24" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE6">
+            <PARTS>
+                <PART Index="75" X="0.5" Y="-13.5" Rotation="-0.7399987" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="27.5" Y="-23.5" Rotation="0.4900004" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-64" Y="-25.5" Rotation="-1.639998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-70" Y="-88.5" Rotation="2.459999" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="65.5" Y="-60.5" Rotation="-4.269998" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-62" Y="-24.5" Rotation="-1.210001" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-30.5" Y="-26.5" Rotation="-0.8000003" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="57.5" Y="-30" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="-99" Y="-34.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="-17.5" Y="-12.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE7">
+            <PARTS>
+                <PART Index="75" X="0.5" Y="-11.5" Rotation="-0.4799988" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="31" Y="-13" Rotation="0.6200004" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-65.5" Y="-23" Rotation="-1.569998" SX="1" SY="1" Flip="0"/>
+                <PART Index="0" X="-72" Y="-71.5" Rotation="2.669999" SX="1" SY="1" Flip="0"/>
+                <PART Index="135" X="66" Y="-36.5" Rotation="-4.419999" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-61" Y="-12" Rotation="-0.7900008" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-28" Y="-6" Rotation="-0.7600003" SX="1" SY="1" Flip="0"/>
+                <PART Index="1019" X="98" Y="-23" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="1020" X="28" Y="-12" Rotation="0" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE8">
+            <PARTS>
+                <PART Index="0" X="-76" Y="-43" Rotation="3.059999" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="0.5" Y="-10.5" Rotation="-0.3799988" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="32.5" Y="-11" Rotation="0.6200004" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-65.5" Y="-20" Rotation="-1.479998" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="63.5" Y="-6" Rotation="-4.720001" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-60" Y="-10" Rotation="-0.7900008" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-28" Y="-3.5" Rotation="-0.9300002" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="EXPLODE9">
+            <PARTS>
+                <PART Index="0" X="-78.5" Y="-19" Rotation="3.649998" SX="1" SY="1" Flip="0"/>
+                <PART Index="75" X="0.5" Y="-10.5" Rotation="-0.3399988" SX="1" SY="1" Flip="0"/>
+                <PART Index="80" X="33" Y="-11" Rotation="0.6200004" SX="1" SY="1" Flip="1"/>
+                <PART Index="64" X="-67" Y="-19.5" Rotation="-1.479998" SX="1" SY="1" Flip="0"/>
+                <PART Index="139" X="64.5" Y="-6" Rotation="-4.720001" SX="1" SY="1" Flip="0"/>
+                <PART Index="74" X="-60" Y="-8.5" Rotation="-0.8100008" SX="1" SY="1" Flip="0"/>
+                <PART Index="81" X="-28" Y="-2.5" Rotation="-0.9100003" SX="1" SY="1" Flip="0"/>
+            </PARTS>
+        </FRAME>
+    </FRAMES>
+</CharDef>

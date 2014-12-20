@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CharDef Path="spiderman" HeadIndex="0" TorsoIndex="0" LegsIndex="0" WeaponIndex="0">
+    <Animations>
+        <Animation Name="IDLE">
+            <KeyFrames>
+                <KeyFrame FrameRef="0" Duration="8"/>
+                <KeyFrame FrameRef="1" Duration="8"/>
+                <KeyFrame FrameRef="2" Duration="8"/>
+                <KeyFrame FrameRef="3" Duration="8"/>
+            </KeyFrames>
+        </Animation>
+    </Animations>
+    <FRAMES>
+        <FRAME Name="IDLE1">
+            <PARTS>
+                <PART Index="193" X="-1" Y="-113" Rotation="-0.4099999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-5" Y="-104" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-3.5" Y="-158" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="6.5" Y="-38.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="77" X="-30" Y="-116.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="28" Y="-109.5" Rotation="-0.11" SX="1" SY="1" Flip="1"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE2">
+            <PARTS>
+                <PART Index="193" X="-2" Y="-114" Rotation="-0.35" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-6" Y="-104" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-2.5" Y="-156.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="6" Y="-38.5" Rotation="-3.948808E-09" SX="1" SY="1" Flip="0"/>
+                <PART Index="77" X="-28.5" Y="-118" Rotation="0.02000003" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="26" Y="-109.5" Rotation="-0.13" SX="1" SY="1" Flip="1"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE3">
+            <PARTS>
+                <PART Index="193" X="-3" Y="-108" Rotation="-0.4199999" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-6" Y="-104" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-1" Y="-155.5" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="5" Y="-38" Rotation="-3.948808E-09" SX="1" SY="1" Flip="0"/>
+                <PART Index="77" X="-27" Y="-111.5" Rotation="0.02000003" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="24.5" Y="-105" Rotation="-0.13" SX="1" SY="1" Flip="1"/>
+            </PARTS>
+        </FRAME>
+        <FRAME Name="IDLE4">
+            <PARTS>
+                <PART Index="193" X="-0.5" Y="-107" Rotation="-0.32" SX="1" SY="1" Flip="0"/>
+                <PART Index="65" X="-6" Y="-104" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="4" X="-1.5" Y="-154" Rotation="0" SX="1" SY="1" Flip="0"/>
+                <PART Index="134" X="6.5" Y="-38" Rotation="-3.948808E-09" SX="1" SY="1" Flip="0"/>
+                <PART Index="77" X="-27" Y="-116" Rotation="-0.12" SX="1" SY="1" Flip="0"/>
+                <PART Index="76" X="25.5" Y="-107.5" Rotation="-0.04999996" SX="1" SY="1" Flip="1"/>
+            </PARTS>
+        </FRAME>
+    </FRAMES>
+</CharDef>

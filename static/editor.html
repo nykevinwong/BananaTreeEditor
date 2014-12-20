@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="css/spacelab.min.css">
     <style>
 
-
         #container {
         width: 800px;
         height: 600px;
@@ -37,17 +36,6 @@
 </head>
 <body>
 
-<table>
-    <tr>
-        <td>Characters:</td>
-        <td><select id="selectCharacters" name="selectCharacters"></select></td>
-        <td>Animations:</td>
-        <td><select id="selectAnimations" name="selectAnimations"></select></td>
-        <td>Frames:</td>
-        <td><select id="selectFrames" name="selectFrames"></select></td>
-    </tr>
-</table>
-
 <div id="container"></div>
 <div id="toolbar">
     <div class="toolbar-inner">
@@ -64,8 +52,24 @@
 </div>
 
 
+<div id="CharacterPanel">
 
-<hr>
+    <table>
+        <tr>
+            <td>Characters:</td>
+            <td><select id="selectCharacters" name="selectCharacters"></select></td>
+        </tr>
+        <tr>
+            <td>Animations:</td>
+            <td><select id="selectAnimations" name="selectAnimations"></select></td>
+        </tr>
+        <tr>
+            <td>Frames:</td>
+            <td><select id="selectFrames" name="selectFrames" style="height:200px;"></select></td>
+        </tr>
+    </table>
+</div>
+
 
 <script src="jslib/kineticjs/kinetic.min.js"></script>
 <script src="js/bundle.js"></script>
