@@ -46,68 +46,25 @@
 
 	var editor = __webpack_require__(1);
 	var toolbar = __webpack_require__(2);
-	var asset = __webpack_require__(3);
+	var utils = __webpack_require__(4);
+
+	var characterPanel = __webpack_require__(5);
 
 	var e = editor.createEditorInstance();
 	var mainLayer = e.getLayer("mainLayer");
-	var previousSelected = null;
 
-	var CharDef =null;
+	;
 
 
 	toolbar.createToolBar(e);
 
 	function triggerChange(selector)
 	{
-	   $(selector).val($(selector+" option:eq(2)").val());
-	   $(selector).trigger("change");
-	   $(selector).val($(selector+" option:first").val());
-	   $(selector).trigger("change");
+	utils.triggerSelectChange(selector);
 	}
 
-	asset.loadTextures( function()
-	                       {
-	                            var mySelect = $('#selectFrames');
-	                            mySelect.unbind('change keypress');
-	                            mySelect.bind('change keypress',function()
-	                            {
-	                               if($(this).data('last') !== $(this).val())
-	                               {
-	                               $(this).data('last', $(this).val());
-	                                   var frameName = $(this).val();
-
-	                                   asset.loadImages(CharDef, frameName, function(group)
-	                                   {
-	                                            if(previousSelected!=null)
-	                                            {
-	                                                previousSelected.remove();
-	                                                previousSelected= null;
-	                                            }
-
-	                                            mainLayer.add(group);
-	                                            mainLayer.draw();
-	                                            previousSelected = group;
-	                                   });
-
-	/*
-	                                   var Scripts = frame.Scripts.Script;
-	                                   var s ="";
-	                                   for(var i=0;i<Scripts.length;i++)
-	                                   {
-	                                    s+=  "#[" + i  + "]" + Scripts[i] +"\n";
-	                                   }
-
-	                                   if(s.length>0)
-	                                   {
-	                                       alert("Scripts:\n" + s);
-	                                   } */
-
-	                               }
-
-	                            });
 
 
-	                       });
 
 	$("#LoadCharacter").click(function()
 	{
@@ -115,11 +72,12 @@
 
 	    $.getJSON( "/xml2js/"+ name, function( data ) {
 
-	        CharDef = data.CharDef;
+	        var CharDef = data.CharDef;
 	        var Animations = CharDef.Animations.Animation;
 
 	        var animationSelect = $("#selectAnimations");
 	        animationSelect.empty();
+	        $('#selectFrames').empty();
 	        animationSelect.unbind('change keypress');
 
 	        for(var i=0;i < Animations.length; i++)
@@ -140,36 +98,14 @@
 	           {
 	               $(this).data('last', $(this).val());
 	                var AnimationName = $(this).val();
-	                var KeyFrames = CharDef.Animations.Animation[AnimationName].KeyFrames.KeyFrame;
 
-	                       var Frames = CharDef.FRAMES.FRAME;
-	                       var mySelect = $('#selectFrames');
-	                       mySelect.empty();
-
-	                       for(var i=0;i < KeyFrames.length; i++)
-	                       {
-	                           var index = KeyFrames[i].FrameRef;
-	                           var f = Frames[index];
-	                           Frames[f.Name] = f;
-
-
-	                           mySelect.append(
-	                               $('<option></option>').val(f.Name).html(f.Name)
-	                           );
-
-	                       }
-
-	                       mySelect.attr("size",KeyFrames.length );
-
-	                       triggerChange("#selectFrames");
+	                characterPanel.initFrameSelector(mainLayer, CharDef, AnimationName);
+	                triggerChange("#selectFrames");
 
 	           }
 	        });
 
 	                triggerChange("#selectAnimations");
-
-
-
 
 
 	    });
@@ -504,6 +440,96 @@
 	    getFrameFunc(group);
 
 	}
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	module.exports.triggerSelectChange = function(selector)
+	{
+	   $(selector).val($(selector+" option:eq(2)").val());
+	   $(selector).trigger("change");
+	   $(selector).val($(selector+" option:first").val());
+	   $(selector).trigger("change");
+	};
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var asset = __webpack_require__(3);
+	var previousSelected = null;
+
+	module.exports.initFrameSelector = function(mainLayer, CharDef, AnimationName)
+	{
+
+	asset.loadTextures(
+
+	function(){
+	   var mySelect = $('#selectFrames');
+	   mySelect.empty();
+
+	   var KeyFrames = CharDef.Animations.Animation[AnimationName].KeyFrames.KeyFrame;
+	   var Frames = CharDef.FRAMES.FRAME;
+
+	   for(var i=0;i < KeyFrames.length; i++)
+	   {
+	      var index = KeyFrames[i].FrameRef;
+	      var f = Frames[index];
+	      Frames[f.Name] = f;
+
+
+	      mySelect.append(
+	          $('<option></option>').val(f.Name).html(f.Name)
+	      );
+
+	   }
+
+	   mySelect.attr("size",KeyFrames.length ); // make it a list box
+
+	   mySelect.unbind('change keypress');
+	   mySelect.bind('change keypress',function()
+	   {
+	      if($(this).data('last') !== $(this).val())
+	      {
+	      $(this).data('last', $(this).val());
+	          var frameName = $(this).val();
+
+	          asset.loadImages(CharDef, frameName, function(group)
+	          {
+	                   if(previousSelected!=null)
+	                   {
+	                       previousSelected.remove();
+	                       previousSelected= null;
+	                   }
+
+	                   mainLayer.add(group);
+	                   mainLayer.draw();
+	                   previousSelected = group;
+	          });
+
+	/*
+	          var Scripts = frame.Scripts.Script;
+	          var s ="";
+	          for(var i=0;i<Scripts.length;i++)
+	          {
+	           s+=  "#[" + i  + "]" + Scripts[i] +"\n";
+	          }
+
+	          if(s.length>0)
+	          {
+	              alert("Scripts:\n" + s);
+	          } */
+
+	      }
+
+	   });
+
+
+	  });
+
+	 };
 
 /***/ }
 /******/ ])
