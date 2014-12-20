@@ -18,5 +18,5 @@ After you git clone this project, run below commands under your project folder.
 
 Prerequisite skill & knowledge for this project
 ================
-CommonJS basic: http://smorgasbork.com/component/content/article/38-titanium-mobile/135-titanium-mobile-beyond-the-prototype
-Webpack tutorial: http://webpack.github.io/docs/tutorials/getting-started/
+1. CommonJS basic - http://smorgasbork.com/component/content/article/38-titanium-mobile/135-titanium-mobile-beyond-the-prototype
+2. Webpack tutorial - http://webpack.github.io/docs/tutorials/getting-started/
