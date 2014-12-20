@@ -15,3 +15,8 @@ After you git clone this project, run below commands under your project folder.
 2. npm install bower 
 3. bower install
 4. npm start
+
+Prerequisite skill & knowledge for this project
+================
+CommonJS basic: http://smorgasbork.com/component/content/article/38-titanium-mobile/135-titanium-mobile-beyond-the-prototype
+Webpack tutorial: http://webpack.github.io/docs/tutorials/getting-started/
